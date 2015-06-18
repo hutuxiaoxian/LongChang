@@ -10,8 +10,9 @@
 #import "Request.h"
 #import "TableViewController.h"
 #import "MBProgressHUD.h"
+#import "SearchClassifyViewController.h"
 
-@interface SearchSameViewController ()<ResponseDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
+@interface SearchSameViewController ()<ResponseDelegate, UIPickerViewDelegate, UIPickerViewDataSource, returnClassify>
 @property (weak, nonatomic) IBOutlet UITextField *content;
 @property (weak, nonatomic) IBOutlet UIButton *type;
 @property (weak, nonatomic) IBOutlet UITextField *classify;
@@ -79,10 +80,12 @@
 }
 
 - (IBAction)classifyClick:(id)sender {
-    self.pickType = 1;
-    [self.pick setHidden:NO];
-    [self.pick selectedRowInComponent:0];
-    [self.pick reloadAllComponents];
+//    self.pickType = 1;
+//    [self.pick setHidden:NO];
+//    [self.pick selectedRowInComponent:0];
+//    [self.pick reloadAllComponents];
+    SearchClassifyViewController *cvc = [[self storyboard] instantiateViewControllerWithIdentifier:@"SearchClassifyViewController"];
+    [self.navigationController pushViewController:cvc animated:YES];
 }
 
 - (IBAction)searchClick:(id)sender {
@@ -200,6 +203,12 @@
     }else if(self.pickType == 3){
         NSString *str = [@[@"精确", @"模糊"] objectAtIndex:row];
         [self.findTypes setTitle:str forState:UIControlStateNormal];
+    }
+}
+
+- (void)returnClassify:(NSString *)classify{
+    if (classify) {
+        [self.classify setText:classify];
     }
 }
 

@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self setTitle:@"公告"];
+//    [self setTitle:@"公告"];
 }
 
 - (void)didReceiveMemoryWarning {

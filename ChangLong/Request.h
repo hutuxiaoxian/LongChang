@@ -71,7 +71,7 @@ enum requestType{
  * 商品分类列表
  */
 - (void)fenLeiListAll;
-- (void)fenleiSousuo:(NSString *)content;
+- (void)fenleiSousuo:(NSString *)content start:(int)start end:(int)end;
 
 /**
  * 注册用户 注册成功返回1 注册失败返回0

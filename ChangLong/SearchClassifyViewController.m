@@ -13,11 +13,12 @@
 
 @interface SearchClassifyViewController ()<ResponseDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *content;
-
+@property (nonatomic, assign)int start, end;
 @end
 
 @implementation SearchClassifyViewController
 @synthesize arrData;
+@synthesize delegate;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,6 +26,9 @@
     
     [[self.content layer] setBorderColor:[[UIColor lightGrayColor] CGColor]];
     [[self.content layer] setBorderWidth:1.0];
+    
+    self.start = 1;
+    self.end = 30;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,7 +48,7 @@
 - (IBAction)searchClick:(id)sender {
     NSString *str = [[self.content text] stringByReplacingOccurrencesOfString:@" " withString:@""];
     if ([str length] > 0 ) {
-        [[[Request alloc] initWithDelegate:self] fenleiSousuo:str];
+        [[[Request alloc] initWithDelegate:self] fenleiSousuo:str start:self.start end:self.end];
     } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"请输入搜索关键字" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
         [alert show];
@@ -53,7 +57,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;//[arrData count];
+    return [arrData count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -84,13 +88,27 @@
     NSDictionary *item = [arrData objectAtIndex:indexPath.row];
     NSString *classify = [item objectForKey:@"intcls"];
     classify = @"01";
-    UIViewController *ctrl = [self.navigationController popViewControllerAnimated:YES];
     
+    [self.navigationController popViewControllerAnimated:YES];
+    if (delegate && [delegate respondsToSelector:@selector(returnClassify:)]) {
+        [delegate returnClassify:classify];
+    }
 }
 
 - (void)responseDate:(id)json Type:(NSInteger)type {
     if (type == FENLEILISTCHAXUN) {
-        arrData = json;
+        if ([json objectForKey:@"data"]) {
+            self.end = [[json objectForKey:@"total"] intValue];
+            json = [json objectForKey:@"data"];
+            if ([json isKindOfClass:[NSArray class]]) {
+                if ([json count] > 0) {
+                    arrData = json;
+                } else {
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"没有找到相关的信息" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
+                    [alert show];
+                }
+            }
+        }
         [self.tableView reloadData];
     }
 }

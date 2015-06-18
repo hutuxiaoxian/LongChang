@@ -608,7 +608,6 @@
                                         </variation>
                                         <connections>
                                             <action selector="classifyClick:" destination="mZU-4u-JGw" eventType="touchUpInside" id="kz5-uX-sQg"/>
-                                            <segue destination="iH9-zo-u8h" kind="push" id="XBQ-fH-bT5"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1091,7 +1090,6 @@
                                         </state>
                                         <connections>
                                             <action selector="classifyClick:" destination="c6m-Ti-Irm" eventType="touchUpInside" id="uUb-Vc-i0h"/>
-                                            <segue destination="iH9-zo-u8h" kind="push" id="K86-53-DHo"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1438,7 +1436,7 @@
             </objects>
             <point key="canvasLocation" x="3670" y="304"/>
         </scene>
-        <!--流程-->
+        <!--Liu Cheng View Controller-->
         <scene sceneID="l7M-3S-Nhf">
             <objects>
                 <viewController storyboardIdentifier="LiuChengViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="q0T-d2-cCx" customClass="LiuChengViewController" sceneMemberID="viewController">
@@ -1462,7 +1460,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="mDd-L3-sHC" secondAttribute="trailing" constant="-16" id="eOz-g9-Kre"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="流程" id="M8Y-wT-2jO"/>
+                    <tabBarItem key="tabBarItem" title="" image="icon_liucheng.png" id="M8Y-wT-2jO"/>
                     <connections>
                         <outlet property="scroll" destination="mDd-L3-sHC" id="3Eg-3K-Pmv"/>
                     </connections>
@@ -1471,7 +1469,7 @@
             </objects>
             <point key="canvasLocation" x="5478" y="-13"/>
         </scene>
-        <!--公告-->
+        <!--Gong Gao View Controller-->
         <scene sceneID="913-g2-rhp">
             <objects>
                 <viewController storyboardIdentifier="GongGaoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CaK-bW-qYG" customClass="GongGaoViewController" sceneMemberID="viewController">
@@ -1534,7 +1532,7 @@
                             <constraint firstItem="SJg-cK-VVv" firstAttribute="top" secondItem="wDj-al-qSi" secondAttribute="bottom" id="X4a-e0-lCn"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="公告" id="Guw-fu-tHb"/>
+                    <tabBarItem key="tabBarItem" title="" image="icon_gonggao.png" id="Guw-fu-tHb"/>
                     <connections>
                         <outlet property="table" destination="wDj-al-qSi" id="hLM-SH-pzU"/>
                     </connections>
@@ -1639,7 +1637,7 @@
             </objects>
             <point key="canvasLocation" x="5478" y="1420"/>
         </scene>
-        <!--图形-->
+        <!--Image View Controller-->
         <scene sceneID="aRF-kg-CtY">
             <objects>
                 <viewController storyboardIdentifier="ImageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0hp-VO-Nim" customClass="ImageViewController" sceneMemberID="viewController">
@@ -1663,7 +1661,7 @@
                             <constraint firstItem="R0M-34-tXD" firstAttribute="top" secondItem="kbX-tU-dZy" secondAttribute="bottom" id="c9g-OE-3Tf"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="图形" id="kVh-JG-HXV"/>
+                    <tabBarItem key="tabBarItem" title="" image="icon_tupian.png" id="kVh-JG-HXV"/>
                     <connections>
                         <outlet property="img" destination="kbX-tU-dZy" id="ZQy-vt-vY1"/>
                     </connections>
@@ -1672,7 +1670,7 @@
             </objects>
             <point key="canvasLocation" x="5478" y="-739"/>
         </scene>
-        <!--文字-->
+        <!--Detail Text View Controller-->
         <scene sceneID="XJv-KY-26W">
             <objects>
                 <viewController id="qQ0-OX-vB2" customClass="DetailTextViewController" sceneMemberID="viewController">
@@ -1962,7 +1960,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="BlH-vr-Jv0" secondAttribute="trailing" constant="-16" id="wud-R5-fXR"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="文字" id="TnA-Z0-R8J"/>
+                    <tabBarItem key="tabBarItem" title="" image="icon_wenzi.png" id="TnA-Z0-R8J"/>
                     <connections>
                         <outlet property="applyAddress" destination="01W-cL-ZX8" id="nVN-hE-1fJ"/>
                         <outlet property="applyDate" destination="tHO-Bc-W01" id="jrJ-4f-B4m"/>
@@ -2099,12 +2097,13 @@
     </scenes>
     <resources>
         <image name="help.png" width="28" height="28"/>
+        <image name="icon_gonggao.png" width="40" height="40"/>
+        <image name="icon_liucheng.png" width="40" height="40"/>
+        <image name="icon_tupian.png" width="40" height="40"/>
+        <image name="icon_wenzi.png" width="40" height="40"/>
         <image name="js_back.png" width="40" height="40"/>
         <image name="login_bg.png" width="320" height="234"/>
         <image name="login_logo.png" width="159" height="159"/>
         <image name="zhifubao.png" width="147" height="47"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="K86-53-DHo"/>
-    </inferredMetricsTieBreakers>
 </document>

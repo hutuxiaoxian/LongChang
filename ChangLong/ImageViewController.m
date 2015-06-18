@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self setTitle:@"商标图"];
+//    [self setTitle:@"商标图"];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,8 +10,9 @@
 #import "Request.h"
 #import "MBProgressHUD.h"
 #import "TableViewController.h"
+#import "SearchClassifyViewController.h"
 
-@interface SearchComplexViewController ()<UIPickerViewDataSource ,UIPickerViewDelegate, ResponseDelegate>
+@interface SearchComplexViewController ()<UIPickerViewDataSource ,UIPickerViewDelegate, ResponseDelegate, returnClassify>
 
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tap;
 @property (weak, nonatomic) IBOutlet UITextField *classify;
@@ -74,9 +75,12 @@
     [self.pick setHidden:YES];
 }
 - (IBAction)classifyClick:(id)sender {
-    self.pickType = 1;
-    [self.pick reloadAllComponents];
-    [self.pick setHidden:NO];
+//    self.pickType = 1;
+//    [self.pick reloadAllComponents];
+//    [self.pick setHidden:NO];
+    
+    SearchClassifyViewController *cvc = [[self storyboard] instantiateViewControllerWithIdentifier:@"SearchClassifyViewController"];
+    [self.navigationController pushViewController:cvc animated:YES];
     
 }
 - (IBAction)typeClick:(id)sender {
@@ -187,6 +191,12 @@
             }
         }
         
+    }
+}
+
+- (void)returnClassify:(NSString *)classify{
+    if (classify) {
+        [self.classify setText:classify];
     }
 }
 

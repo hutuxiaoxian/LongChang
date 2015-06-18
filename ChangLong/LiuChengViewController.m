@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self setTitle:@"流程"];
+//    [self setTitle:@"流程"];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

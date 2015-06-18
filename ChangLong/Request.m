@@ -153,7 +153,6 @@
  */
 - (void)imgByte:(NSString*)regNO{
     NSString *url = [NSString stringWithFormat:@"%@?method=SBImgByte&RegNO=%@", HostName, regNO];
-    
     if (delegate && [delegate respondsToSelector:@selector(responseDate:Type:)]) {
         [conn getConnectWithURL:url delegate:delegate type:IMGBYTE];
     }
@@ -170,9 +169,10 @@
     }
 }
 
-- (void)fenleiSousuo:(NSString *)content {
-    NSString *url = [NSString stringWithFormat:@"%@?method=SBFenLeiListAll", HostName, content];
+- (void)fenleiSousuo:(NSString *)content start:(int)start end:(int)end{
+    NSString *url = [NSString stringWithFormat:@"%@?method=GetDetailInfo&DetailName=%@&Start=%d&End=%d ", HostName, content, start, end];
     
+    url = [self urlEncod:url];
     if (delegate && [delegate respondsToSelector:@selector(responseDate:Type:)]) {
         [conn getConnectWithURL:url delegate:delegate type:FENLEILISTCHAXUN];
     }

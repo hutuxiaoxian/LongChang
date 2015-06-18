@@ -10,6 +10,7 @@
 #import "Request.h"
 #import "TableViewController.h"
 #import "MBProgressHUD.h"
+
 @interface SearchClassViewController ()<ResponseDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *content;
 

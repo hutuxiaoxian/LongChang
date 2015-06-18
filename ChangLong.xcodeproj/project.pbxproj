@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C31CB71F1B32AA86006C2041 /* icon_gonggao@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C31CB71B1B32AA86006C2041 /* icon_gonggao@2x.png */; };
+		C31CB7201B32AA86006C2041 /* icon_liucheng@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C31CB71C1B32AA86006C2041 /* icon_liucheng@2x.png */; };
+		C31CB7211B32AA86006C2041 /* icon_tupian@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C31CB71D1B32AA86006C2041 /* icon_tupian@2x.png */; };
+		C31CB7221B32AA86006C2041 /* icon_wenzi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C31CB71E1B32AA86006C2041 /* icon_wenzi@2x.png */; };
 		C32036871B1AA89200A59FEF /* UserInfoData.m in Sources */ = {isa = PBXBuildFile; fileRef = C32036861B1AA89200A59FEF /* UserInfoData.m */; };
 		C320368A1B1ACDBA00A59FEF /* LiuChengView.m in Sources */ = {isa = PBXBuildFile; fileRef = C32036891B1ACDBA00A59FEF /* LiuChengView.m */; };
 		C320368F1B1ACF2F00A59FEF /* LiuChengViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C320368E1B1ACF2F00A59FEF /* LiuChengViewController.m */; };
@@ -120,6 +124,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C31CB71B1B32AA86006C2041 /* icon_gonggao@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_gonggao@2x.png"; sourceTree = "<group>"; };
+		C31CB71C1B32AA86006C2041 /* icon_liucheng@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_liucheng@2x.png"; sourceTree = "<group>"; };
+		C31CB71D1B32AA86006C2041 /* icon_tupian@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_tupian@2x.png"; sourceTree = "<group>"; };
+		C31CB71E1B32AA86006C2041 /* icon_wenzi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_wenzi@2x.png"; sourceTree = "<group>"; };
 		C32036851B1AA89200A59FEF /* UserInfoData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoData.h; sourceTree = "<group>"; };
 		C32036861B1AA89200A59FEF /* UserInfoData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoData.m; sourceTree = "<group>"; };
 		C32036881B1ACDBA00A59FEF /* LiuChengView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiuChengView.h; sourceTree = "<group>"; };
@@ -610,6 +618,10 @@
 		C38E6A501AAED36300B63D7D /* res */ = {
 			isa = PBXGroup;
 			children = (
+				C31CB71B1B32AA86006C2041 /* icon_gonggao@2x.png */,
+				C31CB71C1B32AA86006C2041 /* icon_liucheng@2x.png */,
+				C31CB71D1B32AA86006C2041 /* icon_tupian@2x.png */,
+				C31CB71E1B32AA86006C2041 /* icon_wenzi@2x.png */,
 				C3B180721B09D94800FA7672 /* help@2x.png */,
 				C38E6A511AAED36300B63D7D /* index_icon02@2x.png */,
 				C38BFCC81B15FA81004279B3 /* zhifubao@2x.png */,
@@ -861,18 +873,22 @@
 				C38E6A5E1AAED36300B63D7D /* index_icon@2x.png in Resources */,
 				C3C70BA81AC4EF6800575B1A /* IQKeyboardManager.bundle in Resources */,
 				C3F818001AA947FA007A59F8 /* Main.storyboard in Resources */,
+				C31CB7211B32AA86006C2041 /* icon_tupian@2x.png in Resources */,
 				C38BFCC91B15FA81004279B3 /* zhifubao@2x.png in Resources */,
 				C3F818051AA947FA007A59F8 /* LaunchScreen.xib in Resources */,
 				C38E6A5C1AAED36300B63D7D /* index_icon02@2x.png in Resources */,
 				C3B1806E1B09BF8B00FA7672 /* icon_main_select@2x.png in Resources */,
 				C38BFD431B16B296004279B3 /* AlipaySDK.bundle in Resources */,
 				C3B180701B09BF8B00FA7672 /* icon_vip@2x.png in Resources */,
+				C31CB7201B32AA86006C2041 /* icon_liucheng@2x.png in Resources */,
 				C3F818021AA947FA007A59F8 /* Images.xcassets in Resources */,
 				C38E6A5D1AAED36300B63D7D /* index_icon03@2x.png in Resources */,
 				C3B180711B09BF8B00FA7672 /* icon_main@2x.png in Resources */,
 				C3B180691B09BC9100FA7672 /* scan@2x.png in Resources */,
 				C38E6A641AAED36300B63D7D /* login_logo@2x.png in Resources */,
 				C3B1806F1B09BF8B00FA7672 /* icon_vip_select@2x.png in Resources */,
+				C31CB71F1B32AA86006C2041 /* icon_gonggao@2x.png in Resources */,
+				C31CB7221B32AA86006C2041 /* icon_wenzi@2x.png in Resources */,
 				C38E6A651AAED36300B63D7D /* login_srk@2x.png in Resources */,
 				C38E6A661AAED36300B63D7D /* shop_seach@2x.png in Resources */,
 			);
