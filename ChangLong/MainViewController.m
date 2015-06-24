@@ -35,6 +35,7 @@
     [labSearchSame setTextAlignment:NSTextAlignmentRight];
     [labSearchSame setTextColor:[UIColor whiteColor]];
     [labSearchSame setFont:[UIFont systemFontOfSize:20]];
+    [labSearchSame setBackgroundColor:[UIColor clearColor]];
     
     [vSearchSame addSubview:imgSearchSame];
     [vSearchSame addSubview:labSearchSame];
@@ -50,6 +51,7 @@
     [labSearchClassify setTextAlignment:NSTextAlignmentRight];
     [labSearchClassify setTextColor:[UIColor whiteColor]];
     [labSearchClassify setFont:[UIFont systemFontOfSize:20]];
+    [labSearchClassify setBackgroundColor:[UIColor clearColor]];
     
     [vSearchClassify addSubview:imgSearchClassify];
     [vSearchClassify addSubview:labSearchClassify];
@@ -66,6 +68,7 @@
     [labComplex setTextAlignment:NSTextAlignmentRight];
     [labComplex setTextColor:[UIColor whiteColor]];
     [labComplex setFont:[UIFont systemFontOfSize:20]];
+    [labComplex setBackgroundColor:[UIColor clearColor]];
     
     [vComplexView addSubview:imgComplex];
     [vComplexView addSubview:labComplex];

@@ -33,7 +33,6 @@
 }
 
 - (void)setRegNO:(NSString *)RegNO {
-    
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [hud setLabelText:@"正在为您查询数据,请稍后..."];
     [hud hide:YES afterDelay:60];

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:ChangLong.xcodeproj">
+      location = "absolute:LongChang.xcodeproj">
    </FileRef>
 </Workspace>

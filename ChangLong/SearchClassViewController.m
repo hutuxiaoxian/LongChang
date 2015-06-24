@@ -20,8 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setTitle:@"商品分类查询"];
-    // Do any additional setup after loading the view.
+    [self setTitle:@"商标状态查询"];
+
     [[self.content layer] setBorderColor:[[UIColor lightGrayColor] CGColor]];
     [[self.content layer] setBorderWidth:1.0];
 }
@@ -41,6 +41,7 @@
         [hud setLabelText:@"正在为您查询数据,请稍后..."];
         [hud hide:YES afterDelay:60];
         [[[Request alloc] initWithDelegate:self] stateList:str];
+        
     }
 }
 

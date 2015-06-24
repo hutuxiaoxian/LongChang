@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C3F817F01AA947FA007A59F8"
-               BuildableName = "ChangLong.app"
-               BlueprintName = "ChangLong"
-               ReferencedContainer = "container:ChangLong.xcodeproj">
+               BuildableName = "LongChang.app"
+               BlueprintName = "LongChang"
+               ReferencedContainer = "container:LongChang.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C3F818091AA947FA007A59F8"
-               BuildableName = "ChangLongTests.xctest"
-               BlueprintName = "ChangLongTests"
-               ReferencedContainer = "container:ChangLong.xcodeproj">
+               BuildableName = "LongChangTests.xctest"
+               BlueprintName = "LongChangTests"
+               ReferencedContainer = "container:LongChang.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C3F818091AA947FA007A59F8"
-               BuildableName = "ChangLongTests.xctest"
-               BlueprintName = "ChangLongTests"
-               ReferencedContainer = "container:ChangLong.xcodeproj">
+               BuildableName = "LongChangTests.xctest"
+               BlueprintName = "LongChangTests"
+               ReferencedContainer = "container:LongChang.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C3F817F01AA947FA007A59F8"
-            BuildableName = "ChangLong.app"
-            BlueprintName = "ChangLong"
-            ReferencedContainer = "container:ChangLong.xcodeproj">
+            BuildableName = "LongChang.app"
+            BlueprintName = "LongChang"
+            ReferencedContainer = "container:LongChang.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C3F817F01AA947FA007A59F8"
-            BuildableName = "ChangLong.app"
-            BlueprintName = "ChangLong"
-            ReferencedContainer = "container:ChangLong.xcodeproj">
+            BuildableName = "LongChang.app"
+            BlueprintName = "LongChang"
+            ReferencedContainer = "container:LongChang.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C3F817F01AA947FA007A59F8"
-            BuildableName = "ChangLong.app"
-            BlueprintName = "ChangLong"
-            ReferencedContainer = "container:ChangLong.xcodeproj">
+            BuildableName = "LongChang.app"
+            BlueprintName = "LongChang"
+            ReferencedContainer = "container:LongChang.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

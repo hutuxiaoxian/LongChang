@@ -10,6 +10,7 @@
 #import "UIScrollView+MJRefresh.h"
 #import "DetailViewController.h"
 #import "Request.h"
+#import "LiuChengViewController.h"
 
 @interface TableViewController ()<ResponseDelegate>
 @property (nonatomic, assign)NSInteger index;
@@ -89,10 +90,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary *item = [arrData objectAtIndex:indexPath.row];
-    DetailViewController *ctrl = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
-    [ctrl setData:item];
-    [ctrl setHidesBottomBarWhenPushed:YES];
-    [self.navigationController pushViewController:ctrl animated:YES];
+    if (url) {
+        
+        DetailViewController *ctrl = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
+        
+        [ctrl setData:item];
+        [ctrl setHidesBottomBarWhenPushed:YES];
+        [self.navigationController pushViewController:ctrl animated:YES];
+    } else {
+        [[[Request alloc] initWithDelegate:self] stateFlowInfo:[item objectForKey:@"IntCls"] regNO:[item objectForKey:@"RegNO"]];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -182,6 +189,17 @@
                 }
                 [self.tableView reloadData];
             }else{
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"没有找到相关信息" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
+                [alert show];
+            }
+        }
+    }else if (type_ == STATEFLOWINFO) {
+        if ([json isKindOfClass:[NSArray class]]) {
+            if ([json count] > 0) {
+                LiuChengViewController *liu = [self.storyboard instantiateViewControllerWithIdentifier:@"LiuChengViewController"];                        [liu setArrData:json];
+                [self.navigationController pushViewController:liu animated:YES];
+            }
+            else {
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"没有找到相关信息" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
                 [alert show];
             }

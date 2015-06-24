@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface SearchClassViewController : UIViewController
-- (void)setIntClassify:(NSString*)classify;
+//- (void)setIntClassify:(NSString*)classify;
 @end

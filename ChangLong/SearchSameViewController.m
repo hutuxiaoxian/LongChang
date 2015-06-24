@@ -85,6 +85,7 @@
 //    [self.pick selectedRowInComponent:0];
 //    [self.pick reloadAllComponents];
     SearchClassifyViewController *cvc = [[self storyboard] instantiateViewControllerWithIdentifier:@"SearchClassifyViewController"];
+    [cvc setDelegate:self];
     [self.navigationController pushViewController:cvc animated:YES];
 }
 

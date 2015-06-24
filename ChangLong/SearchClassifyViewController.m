@@ -10,10 +10,11 @@
 #import "SearchClassViewController.h"
 #import "SearchSameViewController.h"
 #import "Request.h"
+#import "UIScrollView+MJRefresh.h"
 
 @interface SearchClassifyViewController ()<ResponseDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *content;
-@property (nonatomic, assign)int start, end;
+@property (nonatomic, assign)int start, end, count;
 @end
 
 @implementation SearchClassifyViewController
@@ -23,9 +24,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    arrData = [[NSMutableArray alloc] initWithCapacity:30];
     [[self.content layer] setBorderColor:[[UIColor lightGrayColor] CGColor]];
     [[self.content layer] setBorderWidth:1.0];
+    
+    [self.tableView addFooterWithTarget:self action:@selector(pull)];
     
     self.start = 1;
     self.end = 30;
@@ -87,7 +90,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary *item = [arrData objectAtIndex:indexPath.row];
     NSString *classify = [item objectForKey:@"intcls"];
-    classify = @"01";
     
     [self.navigationController popViewControllerAnimated:YES];
     if (delegate && [delegate respondsToSelector:@selector(returnClassify:)]) {
@@ -96,13 +98,15 @@
 }
 
 - (void)responseDate:(id)json Type:(NSInteger)type {
+    [self.tableView footerEndRefreshing];
+    
     if (type == FENLEILISTCHAXUN) {
         if ([json objectForKey:@"data"]) {
-            self.end = [[json objectForKey:@"total"] intValue];
+            self.count = [[json objectForKey:@"total"] intValue];
             json = [json objectForKey:@"data"];
             if ([json isKindOfClass:[NSArray class]]) {
-                if ([json count] > 0) {
-                    arrData = json;
+                if ([(NSArray*)json count] > 0) {
+                    [arrData addObjectsFromArray:json];
                 } else {
                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"没有找到相关的信息" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
                     [alert show];
@@ -113,4 +117,19 @@
     }
 }
 
+- (void)pull {
+    self.start = self.end + 1;
+    if (self.end + 30 > self.count) {
+        self.end = self.count;
+    } else {
+        self.end += 30;
+    }
+    NSString *str = [[self.content text] stringByReplacingOccurrencesOfString:@" " withString:@""];
+    if ([str length] > 0 ) {
+        [[[Request alloc] initWithDelegate:self] fenleiSousuo:str start:self.start end:self.end];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"请输入搜索关键字" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+}
 @end
