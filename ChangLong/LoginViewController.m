@@ -28,6 +28,14 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    NSString *uid = [ud objectForKey:@"UserID"];
+    if (uid && [uid length] > 0) {
+        [self.account setText:uid];
+    }
+}
+
 - (IBAction)login:(id)sender {
     NSString *strAcc = [self.account text];
     strAcc = [strAcc stringByReplacingOccurrencesOfString:@" " withString:@""];
@@ -41,7 +49,7 @@
         [alert show];
     }else{
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        [hud setLabelText:@"正在为您登录,请稍后..."];
+        [hud setLabelText:@"正在为您登录,请稍候..."];
         [hud hide:YES afterDelay:60];
         [[[Request alloc] initWithDelegate:self] getLoginUser:strAcc PassWord:strPsd];
     }
@@ -60,6 +68,9 @@
             [[[self.tabBarController.tabBar items] objectAtIndex:0] setEnabled:YES];
             [[[self.tabBarController.tabBar items] objectAtIndex:1] setEnabled:YES];
             [[[self.tabBarController.tabBar items] objectAtIndex:2] setEnabled:NO];
+            
+            [[NSUserDefaults standardUserDefaults] setValue:[self.account text] forKey:@"UserID"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
             
             [self.tabBarController setSelectedIndex:0];
         }else if([[json objectForKey:@"result"] integerValue] == 0){

@@ -157,6 +157,16 @@
         [conn getConnectWithURL:url delegate:delegate type:IMGBYTE];
     }
 }
+/**
+ * 公告
+ * @param RegNO		注册号/申请号
+ */
+- (void)gonggao:(NSString*)regNO{
+    NSString *url = [NSString stringWithFormat:@"%@?method=SBBulletinHzList&RegNO=%@", HostName, regNO];
+    if (delegate && [delegate respondsToSelector:@selector(responseDate:Type:)]) {
+        [conn getConnectWithURL:url delegate:delegate type:GONGGAO];
+    }
+}
 
 /**
  * 商品分类列表

@@ -26,7 +26,8 @@ enum requestType{
     GETBARCODEINFO,
     USERLOGIN,
     REGISTER,
-    GETISBUYSTATUS
+    GETISBUYSTATUS,
+    GONGGAO
 };
 
 @interface Request : NSObject
@@ -62,6 +63,11 @@ enum requestType{
  * @param RegNO		注册号/申请号
  */
 - (void)stateFlowInfo:(NSString*)tabNum regNO:(NSString*)regNO;
+/**
+ * 公告
+ * @param RegNO		注册号/申请号
+ */
+- (void)gonggao:(NSString*)regNO;
 /**
  * 查询二进制图片  返回byte[](byte)
  * @param RegNO 注册号/申请号

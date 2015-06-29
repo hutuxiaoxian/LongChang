@@ -77,7 +77,7 @@
 - (void)setRegID:(NSString *)RegID {
     
 //    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//    [hud setLabelText:@"正在为您查询数据,请稍后..."];
+//    [hud setLabelText:@"正在为您查询数据,请稍候..."];
 //    [hud hide:YES afterDelay:60];
     _RegID = RegID;
     [[[Request alloc] initWithDelegate:self] stateList:_RegID];

@@ -94,7 +94,7 @@
     }else {
         
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        [hud setLabelText:@"正在为您注册账号,请稍后..."];
+        [hud setLabelText:@"正在为您注册账号,请稍候..."];
         [hud hide:YES afterDelay:60];
         [[[Request alloc] initWithDelegate:self] setRegisterUser:strAccount PassWord:strPassword];
     }
@@ -109,15 +109,15 @@
         int i = arc4random() % 100000;
         i += 1;
         self.strCodeRes = [NSString stringWithFormat:@"%06d", i];
-        NSString *url = [NSString stringWithFormat:@"http://utf8.sms.webchinese.cn/?Uid=longchang&Key=bbb1e31d8d3609525c43&smsMob=%@&smsText=%%E6%%82%%A8%%E7%%9A%%84%%E9%%AA%%8C%%E8%%AF%%81%%E7%%A0%%81:%@", strAccount, self.strCodeRes];
-        NSData *data = [[[Connect alloc] init] getSynConnectWithURL:url];
-        NSString *resp = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-//        NSString *resp = @"1";
+//        NSString *url = [NSString stringWithFormat:@"http://utf8.sms.webchinese.cn/?Uid=longchang&Key=bbb1e31d8d3609525c43&smsMob=%@&smsText=%%E6%%82%%A8%%E7%%9A%%84%%E9%%AA%%8C%%E8%%AF%%81%%E7%%A0%%81:%@", strAccount, self.strCodeRes];
+//        NSData *data = [[[Connect alloc] init] getSynConnectWithURL:url];
+//        NSString *resp = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSString *resp = @"1";
         if ([@"1" isEqualToString:resp]) {
             [MBProgressHUD showHUDAddedTo:self.view WithString:@"验证码获取成功"];
             [self getCode];
         } else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"验证码获取失败,请稍后重试" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"验证码获取失败,请稍候重试" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
             [alert show];
         }
         NSLog(@"resp %@", resp);
@@ -132,7 +132,6 @@
         [[UserInfoData getInstancet] setUserID:userID];
         UIViewController *ctrl = [self.storyboard instantiateViewControllerWithIdentifier:@"vipinfo"];
         [self.navigationController pushViewController:ctrl animated:YES];
-//        [self presentViewController:ctrl animated:NO completion:nil];
     }
 }
 

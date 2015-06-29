@@ -16,7 +16,7 @@
 @end
 
 @implementation LiuChengViewController
-//@synthesize arrData;
+//.@synthesize arrData;
 @synthesize item;
 
 - (void)viewDidLoad {

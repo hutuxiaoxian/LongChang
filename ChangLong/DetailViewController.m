@@ -13,6 +13,7 @@
 #import "WenZiViewController.h"
 #import "DetailTextViewController.h"
 #import "Request.h"
+
 @interface DetailViewController ()<UITabBarControllerDelegate, ResponseDelegate>
 
 @end
