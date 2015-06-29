@@ -51,6 +51,11 @@
 - (IBAction)searchClick:(id)sender {
     NSString *str = [[self.content text] stringByReplacingOccurrencesOfString:@" " withString:@""];
     if ([str length] > 0 ) {
+        [self.arrData removeAllObjects];
+        [self.tableView reloadData];
+        
+        self.start = 1;
+        self.end = 30;
         [[[Request alloc] initWithDelegate:self] fenleiSousuo:str start:self.start end:self.end];
     } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"请输入搜索关键字" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];

@@ -83,11 +83,12 @@
 
 /**
  * 商标综合查询
- * @param TabNum	国际分类号
+ * @param Intcls	国际分类号
  * @param RegNO		注册号/申请号
  * @param SPName	商标名称
- * @param SQNameCN	申请人名称(中文)
+ * @param applicant	申请人名称
  * @param SQNameEN	申请人名称(英文)
+ * @param type      精确:1,模糊:0
  */
 - (NSString*)zongHeInfoWithRegNO:(NSString*)regNO Sbmc:(NSString*)Sbmc applicant:(NSString*)applicant Intcls:(NSString*)Intcls type:(NSInteger)type start:(int)start end:(int)end{
     NSString *url = [NSString stringWithFormat:@"%@?method=SBZongHeInfo", HostName];
@@ -180,7 +181,7 @@
 }
 
 - (void)fenleiSousuo:(NSString *)content start:(int)start end:(int)end{
-    NSString *url = [NSString stringWithFormat:@"%@?method=GetDetailInfo&DetailName=%@&Start=%d&End=%d ", HostName, content, start, end];
+    NSString *url = [NSString stringWithFormat:@"%@?method=GetDetailInfo&DetailName=%@&Start=%d&End=%d", HostName, content, start, end];
     
     url = [self urlEncod:url];
     if (delegate && [delegate respondsToSelector:@selector(responseDate:Type:)]) {

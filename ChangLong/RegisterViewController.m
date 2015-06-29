@@ -109,10 +109,10 @@
         int i = arc4random() % 100000;
         i += 1;
         self.strCodeRes = [NSString stringWithFormat:@"%06d", i];
-//        NSString *url = [NSString stringWithFormat:@"http://utf8.sms.webchinese.cn/?Uid=longchang&Key=bbb1e31d8d3609525c43&smsMob=%@&smsText=%%E6%%82%%A8%%E7%%9A%%84%%E9%%AA%%8C%%E8%%AF%%81%%E7%%A0%%81:%@", strAccount, self.strCodeRes];
-//        NSData *data = [[[Connect alloc] init] getSynConnectWithURL:url];
-//        NSString *resp = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        NSString *resp = @"1";
+        NSString *url = [NSString stringWithFormat:@"http://utf8.sms.webchinese.cn/?Uid=longchang&Key=bbb1e31d8d3609525c43&smsMob=%@&smsText=%%E6%%82%%A8%%E7%%9A%%84%%E9%%AA%%8C%%E8%%AF%%81%%E7%%A0%%81:%@", strAccount, self.strCodeRes];
+        NSData *data = [[[Connect alloc] init] getSynConnectWithURL:url];
+        NSString *resp = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//        NSString *resp = @"1";
         if ([@"1" isEqualToString:resp]) {
             [MBProgressHUD showHUDAddedTo:self.view WithString:@"验证码获取成功"];
             [self getCode];
@@ -130,8 +130,9 @@
     if (type == REGISTER && [[json objectForKey:@"result"] integerValue] == 1) {
         NSString *userID = [json objectForKey:@"UserID"];
         [[UserInfoData getInstancet] setUserID:userID];
-        UIViewController *ctrl = [self.storyboard instantiateViewControllerWithIdentifier:@"vipinfo"];
-        [self.navigationController pushViewController:ctrl animated:YES];
+//        UIViewController *ctrl = [self.storyboard instantiateViewControllerWithIdentifier:@"vipinfo"];
+//        [self.navigationController pushViewController:ctrl animated:YES];
+        [self.tabBarController setSelectedIndex:0];
     }
 }
 

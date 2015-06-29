@@ -59,7 +59,7 @@
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     
     if (type == USERLOGIN) {
-        if ([[json objectForKey:@"result"] integerValue] == 1) {
+        if ([[json objectForKey:@"result"] integerValue] == 1 || [[json objectForKey:@"result"] integerValue] == 2) {
 //            UIViewController *ctrl = [self.storyboard instantiateViewControllerWithIdentifier:@"TabViewController"];
 //            [self presentViewController:ctrl animated:NO completion:nil];
             
