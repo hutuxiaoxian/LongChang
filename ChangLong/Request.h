@@ -98,7 +98,7 @@ enum requestType{
  * 根据条形码获取商标数据
  * @param BarCode 条码
  */
-- (void)getBarCodeInfo:(NSString*)barCode;
+- (NSString*)getBarCodeInfo:(NSString*)barCode;
 
 - (void)getIsBuyStatus:(NSString*)userID;
 

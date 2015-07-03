@@ -15,6 +15,7 @@
 @interface ScanViewController ()<AVCaptureMetadataOutputObjectsDelegate, ResponseDelegate>
 @property(nonatomic,strong)AVCaptureSession *captureSession;
 @property(nonatomic, strong)AVCaptureVideoPreviewLayer *videoPreviewLayer;
+@property(nonatomic, strong)NSString *url;
 @end
 
 @implementation ScanViewController
@@ -92,7 +93,7 @@
         [hud hide:YES afterDelay:60];
         
 //        [[[Request alloc] initWithDelegate:self] getBarCodeInfo:@"06942720100001"];
-        [[[Request alloc] initWithDelegate:self] getBarCodeInfo:metadataObj.stringValue];
+        self.url = [[[Request alloc] initWithDelegate:self] getBarCodeInfo:metadataObj.stringValue];
         
     } 
 }
@@ -104,6 +105,7 @@
         if ([json isKindOfClass:[NSArray class]]) {
             TableViewController *ctrl = [self.storyboard instantiateViewControllerWithIdentifier:@"table"];
             [ctrl setArrData:json];
+            [ctrl setUrl:self.url];
             [[ctrl navigationController] setNavigationBarHidden:NO animated:YES];
 //            UIViewController* c = [self.navigationController popViewControllerAnimated:YES];
             [self.navigationController pushViewController:ctrl animated:YES];

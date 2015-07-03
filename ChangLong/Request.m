@@ -225,13 +225,14 @@
  * 根据条形码获取商标数据
  * @param BarCode 条码
  */
-- (void)getBarCodeInfo:(NSString*)barCode{
+- (NSString*)getBarCodeInfo:(NSString*)barCode{
     
     NSString *url = [NSString stringWithFormat:@"%@?method=GetBarCodeInfo&BarCode=%@", HostName, barCode];
     
     if (delegate && [delegate respondsToSelector:@selector(responseDate:Type:)]) {
         [conn getConnectWithURL:url delegate:delegate type:GETBARCODEINFO];
     }
+    return url;
 }
 
 - (void)getIsBuyStatus:(NSString *)userID{
